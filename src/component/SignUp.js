@@ -61,55 +61,63 @@ export default function SignUp() {
   }
   return (
     <>
-      <form className="login-form-container" onSubmit={Login}>
-        <h2>SignUp</h2>
-        <div className="form-group">
-          <label>UserName:</label>
-          <input
-            type="text"
-            placeholder="Username"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Email Id:</label>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Password:</label>
-          <input
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">SignUp</button>
-        <p>
-          Already a user?<Link to="/">Sign In</Link>
-        </p>
-        <div className="social-media">
-          <a href="#" className="social-icon">
-            <FontAwesomeIcon icon={faFacebookF} />
-          </a>
+      <div className="login-container">
+        <img src={LoginImage} alt="registration-image" className="img_login" />
 
-          <a href="#" className="social-icon">
-            <FontAwesomeIcon icon={faTwitter} size="1x" />
-          </a>
-          <a href="#" className="social-icon">
-            <FontAwesomeIcon icon={faGoogle} size="1x" />
-          </a>
-          <a href="#" className="social-icon">
-            <FontAwesomeIcon icon={faLinkedinIn} />
-          </a>
-        </div>
-      </form>
+        <form
+          className="login-form-container"
+          onSubmit={Login}
+          style={{ width: '100%' }}
+        >
+          <h2>SignUp</h2>
+          <div className="form-group">
+            <label>UserName:</label>
+            <input
+              type="text"
+              placeholder="Username"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Email Id:</label>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Password:</label>
+            <input
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit">SignUp</button>
+          <p>
+            Already a user?<Link to="/">Sign In</Link>
+          </p>
+          <div className="social-media">
+            <a href="#" className="social-icon">
+              <FontAwesomeIcon icon={faFacebookF} />
+            </a>
+
+            <a href="#" className="social-icon">
+              <FontAwesomeIcon icon={faTwitter} size="1x" />
+            </a>
+            <a href="#" className="social-icon">
+              <FontAwesomeIcon icon={faGoogle} size="1x" />
+            </a>
+            <a href="#" className="social-icon">
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </a>
+          </div>
+        </form>
+      </div>
     </>
   );
 }

@@ -9,6 +9,8 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 export default function SignIn() {
   const navigate = useNavigate();
   // const [userName, setUserName] = useState('');
@@ -35,9 +37,13 @@ export default function SignIn() {
         const id = data.user._id;
         console.log(data.user._id);
         localStorage.setItem('userid', data.user._id);
-        if (data.user.userType == 'admin') {
+        if (data.user.email !== email) {
+          toast.error('Invalid credential or password');
+        }
+        if (data.user.userType === 'admin') {
+          console.log('admind clicked');
           navigate(`/Admin`);
-        } else {
+        } else if (data.user.userType === 'user') {
           navigate('/userloan');
         }
         localStorage.setItem('name', name);
